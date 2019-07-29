@@ -1,5 +1,6 @@
 import React from 'react';
-import ReactMapboxGl from 'react-mapbox-gl';
+import ReactMapboxGl, { Marker } from 'react-mapbox-gl';
+import Marker from './Marker';
 
 const Map = (props) => {
 		const Map = new ReactMapboxGl({
@@ -10,20 +11,24 @@ const Map = (props) => {
 		});
 
 
-
 	return (
 		<div className="mapboxBox">
-		<Map
-			center={[-122.3352, 47.6079]}
-			style="mapbox://styles/mapbox/streets-v9"
-			containerStyle={{
-				height: '50vh',
-				width: '50vw'
-			}}>
-			
+			<Map
+				center={[-122.3352, 47.6079]}
+				style="mapbox://styles/mapbox/streets-v9"
+				containerStyle={{
+					height: '50vh',
+					width: '50vw'
+				}}>
+					<Marker coordinates={[-122.324123, 47.616573]}
+						style={{backgroundColor: 'rgba(100, 0, 100, 50%)', height: '25px', width: '25px', borderRadius: '50%'}}>
+					</Marker>
 		</Map>
 	</div>
 	)
 }	
+
+47.616573
+
 
 export default Map;
