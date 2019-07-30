@@ -34,3 +34,20 @@
   background-color: ghostwhite;
 
 }
+
+.App {
+  height: 100vh;
+}
+
+@media screen and (max-width: 600px) {
+  footer.menu {
+    margin: 10px 0px 10px 0px;
+    text-align: center;
+    line-height: 25px;  }
+}
+
+@media screen and (max-width: 600px) {
+  .App {
+    height: 750px;
+  }
+}
