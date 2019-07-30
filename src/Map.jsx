@@ -13,7 +13,7 @@ class Map extends React.Component {
       height: '100%',
       latitude: 47.617170,
       longitude: -122.326948,
-      zoom: 11
+			zoom: 12
     },
     popupInfo: null
   };
