@@ -13,7 +13,8 @@ class App extends React.Component {
   super(props);
   this.state = {
     locations: LOCATIONS.locations,
-    selectedLocation: LOCATIONS.locations[0]
+    selectedLocation: LOCATIONS.locations[0],
+    filterValue: ''
   }
 }
 render() {
@@ -28,15 +29,17 @@ render() {
         <Map shelters={this.state.locations} />
 
       </div>
-      <Router>
-      <footer className="menu">
-        <div><button className="buttons"><img src="/health.png"/>Health</button></div>
-        <div><button className="buttons"><img src="/food.png"/>Food</button></div>
-        <Link to ='/map'><div><button className="buttons"><img src="/shelter.png"/>Shelter</button></div></Link>
-        <div><button className="buttons"><img src="/clothing.png"/>Clothing</button></div>
-      </footer>
 
-      </Router>
+      <footer className="menu">
+        <div><button onClick={this.state.filterValue='med'} 
+        className="buttons"><img src="/health.png"/>Health</button></div>
+        <div><button onClick={this.state.filterValue='food'} 
+        className="buttons"><img src="/food.png"/>Food</button></div>
+        <div><button onClick={this.state.filterValue='shelter'} 
+        className="buttons"><img src="/shelter.png"/>Shelter</button></div>
+        <div><button onClick={this.state.filterValue='clothing'} 
+        className="buttons"><img src="/clothing.png"/>Clothing</button></div>
+      </footer>
 
     </>
     );
