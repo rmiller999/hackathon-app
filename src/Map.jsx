@@ -1,34 +1,64 @@
 import React from 'react';
-import ReactMapboxGl, { Marker } from 'react-mapbox-gl';
-import Marker from './Marker';
+import ReactMapGL, { Marker, Popup } from 'react-map-gl';
 
-const Map = (props) => {
-		const Map = new ReactMapboxGl({
-			accessToken: 'pk.eyJ1IjoibWNkdWRsZXk4NyIsImEiOiJjanhlejR5YWIwdWFwM25tcHNubDdpejIwIn0.n-RmlJrsycjQ76M82M_02Q',
-			container: 'map',
-			minZoom: 12,
-			maxZoom: 16
-		});
+import ShelterPin from './ShelterPin';
+import ShelterPopup from './ShelterPopup.jsx';
 
+const TOKEN = 'pk.eyJ1Ijoia2VsY2MxNjkiLCJhIjoiY2p4YzFnODJhMGh4dDN5bWFkOHdpaGxkYSJ9.P05Jkczde1J1vx7262976A'
 
-	return (
-		<div className="mapboxBox">
-			<Map
-				center={[-122.3352, 47.6079]}
-				style="mapbox://styles/mapbox/streets-v9"
-				containerStyle={{
-					height: '50vh',
-					width: '50vw'
-				}}>
-					<Marker coordinates={[-122.324123, 47.616573]}
-						style={{backgroundColor: 'rgba(100, 0, 100, 50%)', height: '25px', width: '25px', borderRadius: '50%'}}>
-					</Marker>
-		</Map>
-	</div>
-	)
-}	
+class Map extends React.Component {
+  state = {
+    viewport: {
+      width: '85vw',
+      height: '50vh',
+      latitude: 47.617170,
+      longitude: -122.326948,
+      zoom: 11
+    },
+    popupInfo: null
+  };
 
-47.616573
+  _onViewportChange = viewport => this.setState({viewport});
 
+  _renderShelterMarker = (shelter, index) => {
+    return (
+      <Marker key={`marker-${index}`} longitude={shelter.lng} latitude={shelter.lat}>
+        <ShelterPin size={20} onClick={() => this.setState({popupInfo: shelter})} />
+      </Marker>
+    );
+  };
+
+  _renderPopup() {
+    const {popupInfo} = this.state;
+    
+    return (
+      popupInfo && (
+        <Popup
+          tipSize={5}
+          anchor="top"
+          longitude={popupInfo.lng}
+          latitude={popupInfo.lat}
+          closeOnClick={false}
+          onClose={() => this.setState({popupInfo: null})}
+        >
+          <ShelterPopup info={popupInfo} />
+        </Popup>
+      )
+    );
+  }
+
+  render() {
+    return (
+      <ReactMapGL
+        {...this.state.viewport}
+        onViewportChange={this._onViewportChange}
+        mapboxApiAccessToken={TOKEN}
+        >
+          {this.props.shelters.map(this._renderShelterMarker)}
+          {this._renderPopup()} 
+      </ReactMapGL>
+    );
+  }
+}
 
 export default Map;
