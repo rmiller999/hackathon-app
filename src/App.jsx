@@ -13,15 +13,29 @@ class App extends React.Component {
   super(props);
   this.state = {
     locations: LOCATIONS.locations,
-    selectedLocation: LOCATIONS.locations[0]
-  }
+    selectedLocation: LOCATIONS.locations[0],
+    filterValue: "housing"
+  } 
+  this.filterHandler = this.filterHandler.bind(this)
 }
+
+filterHandler(filterValue) {
+  this.setState({filterValue})
+} 
+
+
 render() {
+  const filteredLocations = this.state.locations.filter (
+    location => (location.filterValue === this.state.filterValue)
+  )
+
+
   return (
       <div className="App">
       
-        <Map shelters={this.state.locations} />
-
+        <Map shelters={filteredLocations} />
+        <button onClick={() => this.filterHandler("clothes")}>Clothes</button>
+        <button onClick={() => this.filterHandler("housing")}>Locations</button>
 
       </div>
     );
