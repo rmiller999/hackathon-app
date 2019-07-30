@@ -8,6 +8,16 @@
   font-style: italic;
 }
 
+.logo {
+  height: 70%;
+  width: 70%;
+}
+
+.navButton{
+  height: 80%;
+  width: 80%
+}
+
 .map {
   padding-left: 25%;
 }
