@@ -50,14 +50,22 @@ render() {
       </div>
 
       <footer className="menu">
-        <div><button onClick={() => this.filterHandler("med")}  
-        className="buttons"><img src="/health.png"/>Health</button></div>
-        <div><button onClick={() => this.filterHandler("food")}  
-        className="buttons"><img src="/food.png"/>Food</button></div>
-        <div><button onClick={() => this.filterHandler("housing")} 
-        className="buttons"><img src="/shelter.png"/>Shelter</button></div>
-        <div><button onClick={() => this.filterHandler("clothes")} 
-        className="buttons"><img src="/clothing.png"/>Clothing</button></div>
+        <div>
+          <button onClick={() => this.filterHandler("health")}  
+          className="buttons"><img src="/health.png"/>Health</button>
+        </div>
+        <div>
+          <button onClick={() => this.filterHandler("food")}  
+          className="buttons"><img src="/food.png"/>Food</button>
+        </div>
+        <div>
+          <button onClick={() => this.filterHandler("housing")} 
+          className="buttons"><img src="/shelter.png"/>Housing</button>
+        </div>
+        <div>
+          <button onClick={() => this.filterHandler("clothing")} 
+          className="buttons"><img src="/clothing.png"/>Clothing</button>
+        </div>
       </footer>
 
     </>
