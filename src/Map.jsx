@@ -9,10 +9,8 @@ const TOKEN = 'pk.eyJ1Ijoia2VsY2MxNjkiLCJhIjoiY2p4YzFnODJhMGh4dDN5bWFkOHdpaGxkYS
 class Map extends React.Component {
   state = {
     viewport: {
-      // width: '50vw',
-      // height: '50vh',
-      width: '100vw',
-      height: '100vh',
+      width: '100%',
+      height: '100%',
       latitude: 47.617170,
       longitude: -122.326948,
       zoom: 11
@@ -54,10 +52,12 @@ class Map extends React.Component {
       <ReactMapGL
         {...this.state.viewport}
         onViewportChange={this._onViewportChange}
-        mapboxApiAccessToken={TOKEN}
+				mapboxApiAccessToken={TOKEN}
+				mapStyle='mapbox://styles/mapbox/streets-v11'
         >
           {this.props.shelters.map(this._renderShelterMarker)}
           {this._renderPopup()} 
+					
       </ReactMapGL>
     );
   }

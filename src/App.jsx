@@ -44,6 +44,9 @@ render() {
         <button onClick={() => this.filterHandler("housing")}>Locations</button> */}
         {/* <Map shelters={this.state.locations} /> */}
 
+
+        
+
       </div>
 
       <footer className="menu">
