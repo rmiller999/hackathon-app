@@ -5,7 +5,10 @@
 
 .title {
   text-align: center;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-style: italic;
 }
+
 .map {
   padding-left: 25%;
 }
