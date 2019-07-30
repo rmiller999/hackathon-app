@@ -35,7 +35,9 @@ render() {
       
         <Map shelters={filteredLocations} />
         <button onClick={() => this.filterHandler("clothes")}>Clothes</button>
-        <button onClick={() => this.filterHandler("housing")}>Locations</button>
+        <button onClick={() => this.filterHandler("housing")}>Housing</button>
+        <button onClick={() => this.filterHandler("food")}>Food</button>
+        <button onClick={() => this.filterHandler("healthcare")}>Healthcare</button>
 
       </div>
     );
