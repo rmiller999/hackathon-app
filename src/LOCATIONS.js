@@ -7,7 +7,7 @@ const LOCATIONS = {
       "zipcode": 98109,
       "lat": 47.6103984,
       "lng": -122.347374,
-      "phone": "(206) 621-8474"
+      "phone": "(206) 621-8474",
     },
     {
       "filterValue": "housing",

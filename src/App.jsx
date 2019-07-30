@@ -35,16 +35,11 @@ render() {
 
     <>
       <body>
-        <h1 className="title">Welcome to our app!!! </h1>
+        <h1 className="title"><img src="/logo2.png"/></h1>
       </body>
       <div className="App">
       
         <Map shelters={filteredLocations} />
-        {/* <button onClick={() => this.filterHandler("clothes")}>Clothes</button>
-        <button onClick={() => this.filterHandler("housing")}>Locations</button> */}
-        {/* <Map shelters={this.state.locations} /> */}
-
-
         
 
       </div>

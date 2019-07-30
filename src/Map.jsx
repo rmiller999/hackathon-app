@@ -38,7 +38,7 @@ class Map extends React.Component {
           anchor="top"
           longitude={popupInfo.lng}
           latitude={popupInfo.lat}
-          closeOnClick={false}
+          closeOnClick={true}
           onClose={() => this.setState({popupInfo: null})}
         >
           <ShelterPopup info={popupInfo} />
