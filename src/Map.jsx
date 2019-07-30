@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactMapboxGl from 'react-mapbox-gl';
+import { blockStatement } from '@babel/types';
+import { isAbsolute } from 'path';
 
 const Map = (props) => {
 		const Map = new ReactMapboxGl({
@@ -12,13 +14,13 @@ const Map = (props) => {
 
 
 	return (
-		<div className="mapboxBox">
+		<div className="map">
 		<Map
 			center={[-122.3352, 47.6079]}
 			style="mapbox://styles/mapbox/streets-v9"
 			containerStyle={{
-				height: '50vh',
-				width: '50vw'
+				height: '60vh',
+				width: '100vw'
 			}}>
 			
 		</Map>
