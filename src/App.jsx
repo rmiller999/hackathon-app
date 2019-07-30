@@ -17,7 +17,6 @@ class App extends React.Component {
     filterValue: "housing"
   } 
   this.filterHandler = this.filterHandler.bind(this)
-
   }
 
 
@@ -41,9 +40,9 @@ render() {
       <div className="App">
       
         <Map shelters={filteredLocations} />
-        <button onClick={() => this.filterHandler("clothes")}>Clothes</button>
-        <button onClick={() => this.filterHandler("housing")}>Locations</button>
-        <Map shelters={this.state.locations} />
+        {/* <button onClick={() => this.filterHandler("clothes")}>Clothes</button>
+        <button onClick={() => this.filterHandler("housing")}>Locations</button> */}
+        {/* <Map shelters={this.state.locations} /> */}
 
 
         
@@ -51,13 +50,13 @@ render() {
       </div>
 
       <footer className="menu">
-        <div><button onClick={this.state.filterValue='med'} 
+        <div><button onClick={() => this.filterHandler("med")}  
         className="buttons"><img src="/health.png"/>Health</button></div>
-        <div><button onClick={this.state.filterValue='food'} 
+        <div><button onClick={() => this.filterHandler("food")}  
         className="buttons"><img src="/food.png"/>Food</button></div>
-        <div><button onClick={this.state.filterValue='shelter'} 
+        <div><button onClick={() => this.filterHandler("housing")} 
         className="buttons"><img src="/shelter.png"/>Shelter</button></div>
-        <div><button onClick={this.state.filterValue='clothing'} 
+        <div><button onClick={() => this.filterHandler("clothes")} 
         className="buttons"><img src="/clothing.png"/>Clothing</button></div>
       </footer>
 
