@@ -5,19 +5,22 @@
 .title {
   text-align: center;
 }
-/* .map {
+.map {
   padding-left: 25%;
-} */
+}
 
 .menu {
+  position:fixed;
+	bottom:0;
+	left:0;
+	right:0;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: rgb(0, 255, 13);
+  background-color: ghostwhite;
 }
 
 .menu > div {
-  background-color: rgb(83, 54, 247);
   width: 100px;
   margin: 10px 0px 10px 0px;
   text-align: center;
@@ -26,4 +29,8 @@
 
 .buttons {
   font-size: 25px;
+  border: none;
+  cursor: pointer;
+  background-color: ghostwhite;
+
 }
