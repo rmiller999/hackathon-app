@@ -35,7 +35,7 @@ render() {
 
     <>
       <body>
-        <h1 className="title"><img src="/logo2.png" class="logo"/></h1>
+        <h1 className="title"><img src="/logo3.png" class="logo"/></h1>
       </body>
       <div className="App">
       

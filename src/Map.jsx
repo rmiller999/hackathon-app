@@ -11,12 +11,13 @@ class Map extends React.Component {
     viewport: {
       width: '100%',
       height: '100%',
-      latitude: 47.617170,
-      longitude: -122.326948,
-			zoom: 12
+      latitude: 47.605994,
+      longitude: -122.332190,
+			zoom: 12,
     },
     popupInfo: null
-  };
+	};
+	
 
   _onViewportChange = viewport => this.setState({viewport});
 
