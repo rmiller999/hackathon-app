@@ -1,3 +1,4 @@
+
 .app {
   text-align: center
 }
@@ -15,7 +16,9 @@
 
 .navButton{
   height: 80%;
-  width: 80%
+  width: 80%;
+  /* height: 20%;
+  width: 20%; */
 }
 
 .map {
@@ -45,7 +48,12 @@
   border: none;
   cursor: pointer;
   background-color: ghostwhite;
+  outline: none;
+}
 
+.buttons:hover {
+  background-color: rgba(204, 210, 216, 0.781);
+  border-radius: 10px;
 }
 
 .App {
@@ -54,13 +62,11 @@
 
 @media screen and (max-width: 600px) {
   footer.menu {
-    margin: 10px 0px 10px 0px;
+    /* margin: 10px 0px 10px 0px; */
     text-align: center;
     line-height: 25px;  }
-}
 
-@media screen and (max-width: 600px) {
-  .App {
-    height: 750px;
+  .logo {
+    width: 50%;
   }
 }
