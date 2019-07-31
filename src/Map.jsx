@@ -18,10 +18,6 @@ class Map extends React.Component {
     popupInfo: null
 	};
 	
-	
-
-
-
 
   _onViewportChange = viewport => this.setState({viewport});
 
